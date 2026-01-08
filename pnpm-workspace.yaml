@@ -2,3 +2,17 @@ packages:
   - apps/*
   - api
   - packages/*
+  - inverka-dashboard
+
+ignoredBuiltDependencies:
+  - '@nestjs/core'
+  - unrs-resolver
+
+onlyBuiltDependencies:
+  - '@prisma/client'
+  - '@prisma/engines'
+  - '@tailwindcss/oxide'
+  - bcrypt
+  - esbuild
+  - prisma
+  - sharp
