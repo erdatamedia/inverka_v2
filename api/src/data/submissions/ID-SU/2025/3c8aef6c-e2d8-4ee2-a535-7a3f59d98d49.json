@@ -1,0 +1,56 @@
+{
+  "id": "3c8aef6c-e2d8-4ee2-a535-7a3f59d98d49",
+  "createdAt": "2025-11-11T06:17:08.379Z",
+  "updatedAt": "2025-11-11T06:18:01.525Z",
+  "createdBy": "petugas.id-su@inverka.app",
+  "province": "ID-SU",
+  "year": 2025,
+  "status": "disetujui",
+  "payload": {
+    "year": 2025,
+    "region_id": "ID-SU",
+    "total_population": 10000,
+    "mitigations": [
+      {
+        "action_id": "mitigation-young-jerami-padi-rumput-lapang-konsentrat",
+        "coverage": 0.25
+      },
+      {
+        "action_id": "mitigation-growth-jerami-padi-rumput-lapang-konsentrat",
+        "coverage": 0.25
+      },
+      {
+        "action_id": "mitigation-mature-jerami-padi-rumput-lapang-konsentrat",
+        "coverage": 0.25
+      },
+      {
+        "action_id": "mitigation-pre-weaning-jerami-padi-rumput-lapang-konsentrat",
+        "coverage": 0.25
+      }
+    ]
+  },
+  "result": {
+    "summary": {
+      "baseline": 4689.75,
+      "mitigated": 3845.61,
+      "reduction": 844.14,
+      "percent": 18
+    },
+    "by_gas": {
+      "CH4": 3.288,
+      "N2O": 0.558,
+      "total": 3.846
+    },
+    "manure": {
+      "CH4": 1057.28,
+      "N2O_dir": 407.27,
+      "N2O_ind": 150.58,
+      "total": 1615.13
+    },
+    "enteric": {
+      "CH4_ton": 79.66,
+      "CH4_CO2e": 2230.48,
+      "CH4_Gg": 2.23
+    }
+  }
+}

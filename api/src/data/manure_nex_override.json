@@ -1,0 +1,93 @@
+[
+  {
+    "Production_System": "Extensive",
+    "Animal_Category": "Beef Cattle_Weaning",
+    "DMI_kg_day": 8.091,
+    "CP_percent_diet": 9.07,
+    "Nex_kgN_per_year": 17.14
+  },
+  {
+    "Production_System": "Extensive",
+    "Animal_Category": "Beef Cattle_Yearling",
+    "DMI_kg_day": 12.851,
+    "CP_percent_diet": 9.07,
+    "Nex_kgN_per_year": 27.23
+  },
+  {
+    "Production_System": "Extensive",
+    "Animal_Category": "Beef Cattle_Adult Male",
+    "DMI_kg_day": 12.48,
+    "CP_percent_diet": 9.07,
+    "Nex_kgN_per_year": 26.44
+  },
+  {
+    "Production_System": "Extensive",
+    "Animal_Category": "Beef Cattle_Adult Female",
+    "DMI_kg_day": 12.98,
+    "CP_percent_diet": 9.07,
+    "Nex_kgN_per_year": 27.5
+  },
+  {
+    "Production_System": "Semi-Intensive",
+    "Animal_Category": "Beef Cattle_Weaning",
+    "DMI_kg_day": 4.01,
+    "CP_percent_diet": 8.62,
+    "Nex_kgN_per_year": 8.07
+  },
+  {
+    "Production_System": "Semi-Intensive",
+    "Animal_Category": "Beef Cattle_Yearling",
+    "DMI_kg_day": 5.9,
+    "CP_percent_diet": 8.62,
+    "Nex_kgN_per_year": 11.88
+  },
+  {
+    "Production_System": "Semi-Intensive",
+    "Animal_Category": "Beef Cattle_Adult Male",
+    "DMI_kg_day": 6.67,
+    "CP_percent_diet": 8.62,
+    "Nex_kgN_per_year": 13.43
+  },
+  {
+    "Production_System": "Semi-Intensive",
+    "Animal_Category": "Beef Cattle_Adult Female",
+    "DMI_kg_day": 7.3,
+    "CP_percent_diet": 8.62,
+    "Nex_kgN_per_year": 14.7
+  },
+  {
+    "Production_System": "Intensive",
+    "Animal_Category": "Beef Cattle_Weaning",
+    "DMI_kg_day": 7.16,
+    "CP_percent_diet": 7.3,
+    "Nex_kgN_per_year": 12.21
+  },
+  {
+    "Production_System": "Intensive",
+    "Animal_Category": "Beef Cattle_Yearling",
+    "DMI_kg_day": 9.77,
+    "CP_percent_diet": 7.3,
+    "Nex_kgN_per_year": 16.66
+  },
+  {
+    "Production_System": "Intensive",
+    "Animal_Category": "Beef Cattle_Adult Male",
+    "DMI_kg_day": 15.18,
+    "CP_percent_diet": 7.3,
+    "Nex_kgN_per_year": 25.89
+  },
+  {
+    "Production_System": "Intensive",
+    "Animal_Category": "Beef Cattle_Adult Female",
+    "DMI_kg_day": 11.42,
+    "CP_percent_diet": 7.3,
+    "Nex_kgN_per_year": 19.47
+  },
+  {
+    "Production_System": "Intensive",
+    "Animal_Category": "Imported Cattle",
+    "DMI_kg_day": 10.64,
+    "CP_percent_diet": 14,
+    "Nex_kgN_per_year": 34.8
+  }
+]

@@ -1,0 +1,134 @@
+{
+  "id": "SUB-1760890913163",
+  "createdAt": "2025-10-19T16:21:53.163Z",
+  "role": "petugas",
+  "province": "ID-JT",
+  "year": 2025,
+  "status": "disetujui",
+  "baseline": {
+    "year": 2025,
+    "province": "ID-JT",
+    "total_population": 1120,
+    "distribution": {
+      "Weaning": 211,
+      "Yearling": 235,
+      "Young": 282,
+      "Mature": 392
+    }
+  },
+  "mitigation": {
+    "province": "ID-JT",
+    "year": 2025,
+    "submissionId": "SUB-1760890913163",
+    "activities": [
+      "Bank Pakan",
+      "Biogas",
+      "Pupuk Organik"
+    ],
+    "feedClass": {
+      "Weaning": {
+        "fc1": 4,
+        "fc2": 144,
+        "fc3": 62,
+        "fc4": 0
+      },
+      "Yearling": {
+        "fc1": 0,
+        "fc2": 106,
+        "fc3": 128,
+        "fc4": 1
+      },
+      "Young": {
+        "fc1": 13,
+        "fc2": 167,
+        "fc3": 48,
+        "fc4": 54
+      },
+      "Mature": {
+        "fc1": 5,
+        "fc2": 306,
+        "fc3": 80,
+        "fc4": 1
+      }
+    }
+  },
+  "results": {
+    "feedDistribution": [
+      {
+        "Physiological_status": "Weaning",
+        "Feed_Class_1_Baseline": 4,
+        "Feed_Class_2": 144,
+        "Feed_Class_3": 62,
+        "Feed_Class_4": 0,
+        "Total": 210
+      },
+      {
+        "Physiological_status": "Yearling",
+        "Feed_Class_1_Baseline": 0,
+        "Feed_Class_2": 106,
+        "Feed_Class_3": 128,
+        "Feed_Class_4": 1,
+        "Total": 235
+      },
+      {
+        "Physiological_status": "Young",
+        "Feed_Class_1_Baseline": 13,
+        "Feed_Class_2": 167,
+        "Feed_Class_3": 48,
+        "Feed_Class_4": 54,
+        "Total": 282
+      },
+      {
+        "Physiological_status": "Mature",
+        "Feed_Class_1_Baseline": 5,
+        "Feed_Class_2": 306,
+        "Feed_Class_3": 80,
+        "Feed_Class_4": 1,
+        "Total": 392
+      }
+    ],
+    "emissionTable": [
+      {
+        "Physiological_status": "Weaning",
+        "Emission_kgCH4_per_head_year": "3.82",
+        "Feed_Class_1_Baseline": 15.29,
+        "Feed_Class_2_Mitigation": 525.11,
+        "Feed_Class_3_Mitigation": 209.12,
+        "Feed_Class_4_Mitigation": 0
+      },
+      {
+        "Physiological_status": "Yearling",
+        "Emission_kgCH4_per_head_year": "4.77",
+        "Feed_Class_1_Baseline": 0,
+        "Feed_Class_2_Mitigation": 482.46,
+        "Feed_Class_3_Mitigation": 538.88,
+        "Feed_Class_4_Mitigation": 3.96
+      },
+      {
+        "Physiological_status": "Young",
+        "Emission_kgCH4_per_head_year": "7.67",
+        "Feed_Class_1_Baseline": 99.72,
+        "Feed_Class_2_Mitigation": 1222.16,
+        "Feed_Class_3_Mitigation": 324.92,
+        "Feed_Class_4_Mitigation": 343.66
+      },
+      {
+        "Physiological_status": "Mature",
+        "Emission_kgCH4_per_head_year": "21.87",
+        "Feed_Class_1_Baseline": 109.37,
+        "Feed_Class_2_Mitigation": 6386.1,
+        "Feed_Class_3_Mitigation": 1544.28,
+        "Feed_Class_4_Mitigation": 18.15
+      }
+    ],
+    "totals": {
+      "baseline": 12665.01,
+      "fc2": 8615.83,
+      "fc3": 2617.19,
+      "fc4": 365.77,
+      "mitigationSum": 11598.79,
+      "reducedPct": 8.42
+    }
+  },
+  "updatedAt": "2025-10-19T16:22:15.816Z"
+}

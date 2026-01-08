@@ -1,0 +1,62 @@
+[
+  {
+    "category": "Young",
+    "factors": {
+      "Jerami padi/Rumput Lapang": {
+        "Konsentrat": 0.682,
+        "Legumes": 0.698,
+        "Silase": 0.698
+      },
+      "Rumput Budidaya/Limbah Peternakan": {
+        "Konsentrat": 0.545,
+        "Legumes": 0.548,
+        "Silase": 0.698
+      }
+    }
+  },
+  {
+    "category": "Growth",
+    "factors": {
+      "Jerami padi/Rumput Lapang": {
+        "Konsentrat": 0.714,
+        "Legumes": 0.731,
+        "Silase": 0.731
+      },
+      "Rumput Budidaya/Limbah Peternakan": {
+        "Konsentrat": 0.571,
+        "Legumes": 0.574,
+        "Silase": 0.731
+      }
+    }
+  },
+  {
+    "category": "Mature",
+    "factors": {
+      "Jerami padi/Rumput Lapang": {
+        "Konsentrat": 0.803,
+        "Legumes": 0.822,
+        "Silase": 0.822
+      },
+      "Rumput Budidaya/Limbah Peternakan": {
+        "Konsentrat": 0.642,
+        "Legumes": 0.645,
+        "Silase": 0.822
+      }
+    }
+  },
+  {
+    "category": "Pre weaning",
+    "factors": {
+      "Jerami padi/Rumput Lapang": {
+        "Konsentrat": 0.571,
+        "Legumes": 0.584,
+        "Silase": 0.584
+      },
+      "Rumput Budidaya/Limbah Peternakan": {
+        "Konsentrat": 0.456,
+        "Legumes": 0.459,
+        "Silase": 0.585
+      }
+    }
+  }
+]

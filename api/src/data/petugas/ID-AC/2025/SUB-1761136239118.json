@@ -1,0 +1,19 @@
+{
+  "id": "SUB-1761136239118",
+  "createdAt": "2025-10-22T12:30:39.118Z",
+  "role": "petugas",
+  "province": "ID-AC",
+  "year": 2025,
+  "status": "menunggu",
+  "baseline": {
+    "year": 2025,
+    "province": "ID-AC",
+    "total_population": 1000,
+    "distribution": {
+      "Weaning": 190,
+      "Yearling": 210,
+      "Young": 250,
+      "Mature": 350
+    }
+  }
+}

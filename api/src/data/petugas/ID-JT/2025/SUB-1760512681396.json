@@ -1,0 +1,20 @@
+{
+  "id": "SUB-1760512681396",
+  "createdAt": "2025-10-15T07:18:01.396Z",
+  "role": "petugas",
+  "province": "ID-JT",
+  "year": 2025,
+  "status": "disetujui",
+  "baseline": {
+    "year": 2025,
+    "province": "ID-JT",
+    "total_population": 1119,
+    "distribution": {
+      "Weaning": 210,
+      "Yearling": 235,
+      "Young": 282,
+      "Mature": 392
+    }
+  },
+  "updatedAt": "2025-10-15T07:20:15.646Z"
+}

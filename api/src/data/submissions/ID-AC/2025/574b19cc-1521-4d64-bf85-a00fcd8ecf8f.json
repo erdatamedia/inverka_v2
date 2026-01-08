@@ -1,0 +1,48 @@
+{
+  "id": "574b19cc-1521-4d64-bf85-a00fcd8ecf8f",
+  "createdAt": "2025-10-22T21:06:30.606Z",
+  "updatedAt": "2025-10-23T05:50:26.487Z",
+  "createdBy": "petugas.id-ac@inverka.app",
+  "province": "ID-AC",
+  "year": 2025,
+  "status": "disetujui",
+  "payload": {
+    "year": 2025,
+    "region_id": "ID-AC",
+    "total_population": 500,
+    "mitigations": [
+      {
+        "action_id": "mitigation-jerami-padi-rumput-lapang-konsentrat",
+        "coverage": 0.27
+      },
+      {
+        "action_id": "mitigation-jerami-padi-rumput-lapang-legumes",
+        "coverage": 0.19
+      }
+    ]
+  },
+  "result": {
+    "summary": {
+      "baseline": 234.48,
+      "mitigated": 234.53,
+      "reduction": -0.05,
+      "percent": -0.02
+    },
+    "by_gas": {
+      "CH4": 0.207,
+      "N2O": 0.028,
+      "total": 0.235
+    },
+    "manure": {
+      "CH4": 52.92,
+      "N2O_dir": 20.36,
+      "N2O_ind": 7.53,
+      "total": 80.81
+    },
+    "enteric": {
+      "CH4_ton": 5.49,
+      "CH4_CO2e": 153.72,
+      "CH4_Gg": 0.154
+    }
+  }
+}

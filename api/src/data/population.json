@@ -1,0 +1,67 @@
+[
+  {
+    "Production_System": "Extensive",
+    "Animal_Category": "Beef Cattle_Weaning",
+    "Population_Head": 7730922
+  },
+  {
+    "Production_System": "Extensive",
+    "Animal_Category": "Beef Cattle_Yearling",
+    "Population_Head": 10516511
+  },
+  {
+    "Production_System": "Extensive",
+    "Animal_Category": "Beef Cattle_Adult Male",
+    "Population_Head": 4056861
+  },
+  {
+    "Production_System": "Extensive",
+    "Animal_Category": "Beef Cattle_Adult Female",
+    "Population_Head": 17633051
+  },
+  {
+    "Production_System": "Semi-Intensive",
+    "Animal_Category": "Beef Cattle_Weaning",
+    "Population_Head": 9914801
+  },
+  {
+    "Production_System": "Semi-Intensive",
+    "Animal_Category": "Beef Cattle_Yearling",
+    "Population_Head": 13487461
+  },
+  {
+    "Production_System": "Semi-Intensive",
+    "Animal_Category": "Beef Cattle_Adult Male",
+    "Population_Head": 5202931
+  },
+  {
+    "Production_System": "Semi-Intensive",
+    "Animal_Category": "Beef Cattle_Adult Female",
+    "Population_Head": 2261444
+  },
+  {
+    "Production_System": "Intensive",
+    "Animal_Category": "Beef Cattle_Weaning",
+    "Population_Head": 1642586
+  },
+  {
+    "Production_System": "Intensive",
+    "Animal_Category": "Beef Cattle_Yearling",
+    "Population_Head": 2234469
+  },
+  {
+    "Production_System": "Intensive",
+    "Animal_Category": "Beef Cattle_Adult Male",
+    "Population_Head": 754196
+  },
+  {
+    "Production_System": "Intensive",
+    "Animal_Category": "Beef Cattle_Adult Female",
+    "Population_Head": 3695729
+  },
+  {
+    "Production_System": "Intensive",
+    "Animal_Category": "Imported Cattle",
+    "Population_Head": 318606
+  }
+]

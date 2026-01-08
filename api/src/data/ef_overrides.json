@@ -1,0 +1,82 @@
+[
+  {
+    "Production_System": "Extensive",
+    "Animal_Category": "Beef Cattle_Weaning",
+    "Manure_CH4_kg_head_yr": 0.3,
+    "Manure_N2O_kg_head_yr": 0.16
+  },
+  {
+    "Production_System": "Extensive",
+    "Animal_Category": "Beef Cattle_Yearling",
+    "Manure_CH4_kg_head_yr": 0.47,
+    "Manure_N2O_kg_head_yr": 0.26
+  },
+  {
+    "Production_System": "Extensive",
+    "Animal_Category": "Beef Cattle_Adult Male",
+    "Manure_CH4_kg_head_yr": 0.46,
+    "Manure_N2O_kg_head_yr": 0.25
+  },
+  {
+    "Production_System": "Extensive",
+    "Animal_Category": "Beef Cattle_Adult Female",
+    "Manure_CH4_kg_head_yr": 0.48,
+    "Manure_N2O_kg_head_yr": 0.26
+  },
+
+  {
+    "Production_System": "Semi-Intensive",
+    "Animal_Category": "Beef Cattle_Weaning",
+    "Manure_CH4_kg_head_yr": 0.8,
+    "Manure_N2O_kg_head_yr": 0.13
+  },
+  {
+    "Production_System": "Semi-Intensive",
+    "Animal_Category": "Beef Cattle_Yearling",
+    "Manure_CH4_kg_head_yr": 1.19,
+    "Manure_N2O_kg_head_yr": 0.19
+  },
+  {
+    "Production_System": "Semi-Intensive",
+    "Animal_Category": "Beef Cattle_Adult Male",
+    "Manure_CH4_kg_head_yr": 1.34,
+    "Manure_N2O_kg_head_yr": 0.22
+  },
+  {
+    "Production_System": "Semi-Intensive",
+    "Animal_Category": "Beef Cattle_Adult Female",
+    "Manure_CH4_kg_head_yr": 1.47,
+    "Manure_N2O_kg_head_yr": 0.24
+  },
+
+  {
+    "Production_System": "Intensive",
+    "Animal_Category": "Beef Cattle_Weaning",
+    "Manure_CH4_kg_head_yr": 2.15,
+    "Manure_N2O_kg_head_yr": 0.18
+  },
+  {
+    "Production_System": "Intensive",
+    "Animal_Category": "Beef Cattle_Yearling",
+    "Manure_CH4_kg_head_yr": 2.94,
+    "Manure_N2O_kg_head_yr": 0.24
+  },
+  {
+    "Production_System": "Intensive",
+    "Animal_Category": "Beef Cattle_Adult Male",
+    "Manure_CH4_kg_head_yr": 31.97,
+    "Manure_N2O_kg_head_yr": 0.27
+  },
+  {
+    "Production_System": "Intensive",
+    "Animal_Category": "Beef Cattle_Adult Female",
+    "Manure_CH4_kg_head_yr": 3.43,
+    "Manure_N2O_kg_head_yr": 0.28
+  },
+  {
+    "Production_System": "Intensive",
+    "Animal_Category": "Imported Cattle",
+    "Manure_CH4_kg_head_yr": 5.51,
+    "Manure_N2O_kg_head_yr": 0.7
+  }
+]

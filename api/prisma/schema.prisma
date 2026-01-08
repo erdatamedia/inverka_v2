@@ -1,0 +1,120 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/** Enums */
+enum ProductionSystem {
+  Ekstensif
+  Semi_Intensif
+  Intensif
+}
+
+enum AnimalCategory {
+  Weaning
+  Yearling
+  Adult_male
+  Adult_female
+}
+
+/** Provinces */
+model Province {
+  code   String  @id
+  name   String  @unique
+  users  User[]
+  activity ActivityData?
+  populations Population[]
+}
+
+/** Users */
+enum UserRole {
+  superadmin
+  petugas
+}
+
+model User {
+  id         String    @id @default(cuid())
+  name       String
+  email      String    @unique
+  password   String
+  role       UserRole
+  active     Boolean   @default(true)
+  provinceId String?
+  province   Province? @relation(fields: [provinceId], references: [code])
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+}
+
+/** ActivityData per provinsi (mix & distro) */
+model ActivityData {
+  provinceId String   @id
+  province   Province @relation(fields: [provinceId], references: [code])
+
+  // mix (0–1)
+  mixEkstensif    Float  @default(0)
+  mixSemi         Float  @default(0)
+  mixIntensif     Float  @default(0)
+
+  // distro per system (0–1)
+  // Ekstensif
+  ekstensifWeaning     Float @default(0)
+  ekstensifYearling    Float @default(0)
+  ekstensifAdult_male  Float @default(0)
+  ekstensifAdult_female Float @default(0)
+
+  // Semi-Intensif
+  semiWeaning     Float @default(0)
+  semiYearling    Float @default(0)
+  semiAdult_male  Float @default(0)
+  semiAdult_female Float @default(0)
+
+  // Intensif
+  intensifWeaning     Float @default(0)
+  intensifYearling    Float @default(0)
+  intensifAdult_male  Float @default(0)
+  intensifAdult_female Float @default(0)
+}
+
+/** Mitigation master (faktor koreksi) */
+enum MitigationFeed {
+  Jerami_padi_Rumput_Lapang
+  Rumput_Budidaya_Limbah_Peternakan
+}
+enum MitigationAction {
+  Konsentrat
+  Legumes
+  Silase
+}
+
+enum MitigationCategory {
+  Pre_weaning
+  Young
+  Growth
+  Mature
+}
+
+model MitigationFactor {
+  id        String             @id @default(cuid())
+  category  MitigationCategory
+  feed      MitigationFeed
+  action    MitigationAction
+  factor    Float              // contoh 0.571
+  @@unique([category, feed, action])
+}
+
+/** Population hasil input petugas per provinsi */
+model Population {
+  id         String           @id @default(cuid())
+  provinceId String
+  province   Province         @relation(fields: [provinceId], references: [code])
+  system     ProductionSystem
+  category   AnimalCategory
+  heads      Int
+
+  @@index([provinceId, system, category])
+  @@unique([provinceId, system, category])
+}

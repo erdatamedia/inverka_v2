@@ -1,0 +1,8 @@
+{
+  "name": "inverka_v2",
+  "private": true,
+  "scripts": {
+    "dev": "echo Run per app, mis: cd apps/api && pnpm dev",
+    "lint": "echo (skip)"
+  }
+}

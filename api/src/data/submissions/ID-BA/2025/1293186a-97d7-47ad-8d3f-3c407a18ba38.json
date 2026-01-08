@@ -1,0 +1,44 @@
+{
+  "id": "1293186a-97d7-47ad-8d3f-3c407a18ba38",
+  "createdAt": "2025-10-22T21:28:23.253Z",
+  "updatedAt": "2025-10-23T05:50:24.836Z",
+  "createdBy": "petugas.id-ba@inverka.app",
+  "province": "ID-BA",
+  "year": 2025,
+  "status": "disetujui",
+  "payload": {
+    "year": 2025,
+    "region_id": "ID-BA",
+    "total_population": 400,
+    "mitigations": [
+      {
+        "action_id": "mitigation-jerami-padi-rumput-lapang-konsentrat",
+        "coverage": 0.1
+      }
+    ]
+  },
+  "result": {
+    "summary": {
+      "baseline": 187.58,
+      "mitigated": 187.51,
+      "reduction": 0.07,
+      "percent": 0.04
+    },
+    "by_gas": {
+      "CH4": 0.165,
+      "N2O": 0.022,
+      "total": 0.188
+    },
+    "manure": {
+      "CH4": 42.28,
+      "N2O_dir": 16.29,
+      "N2O_ind": 6.02,
+      "total": 64.59
+    },
+    "enteric": {
+      "CH4_ton": 4.39,
+      "CH4_CO2e": 122.92,
+      "CH4_Gg": 0.123
+    }
+  }
+}

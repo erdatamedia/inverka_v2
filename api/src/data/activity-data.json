@@ -1,0 +1,1104 @@
+[
+  {
+    "provinceCode": "ID-AC",
+    "provinceName": "ACEH",
+    "mix": {
+      "ekstensif": 8.14,
+      "semi": 79.85,
+      "intensif": 12.1
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1749,
+        "Yearling": 0.2576,
+        "AdultMale": 0.1365,
+        "AdultFemale": 0.4309
+      },
+      "semi": {
+        "Weaning": 0.1749,
+        "Yearling": 0.2576,
+        "AdultMale": 0.1365,
+        "AdultFemale": 0.4309
+      },
+      "intensif": {
+        "Weaning": 0.1749,
+        "Yearling": 0.2576,
+        "AdultMale": 0.1365,
+        "AdultFemale": 0.4309
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-BA",
+    "provinceName": "BALI",
+    "mix": {
+      "ekstensif": 6.9,
+      "semi": 17.13,
+      "intensif": 75.97
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.2032,
+        "Yearling": 0.2522,
+        "AdultMale": 0.0776,
+        "AdultFemale": 0.467
+      },
+      "semi": {
+        "Weaning": 0.2032,
+        "Yearling": 0.2522,
+        "AdultMale": 0.0776,
+        "AdultFemale": 0.467
+      },
+      "intensif": {
+        "Weaning": 0.2032,
+        "Yearling": 0.2522,
+        "AdultMale": 0.0776,
+        "AdultFemale": 0.467
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-BB",
+    "provinceName": "KEP. BANGKA BELITUNG",
+    "mix": {
+      "ekstensif": 1.22,
+      "semi": 47.99,
+      "intensif": 50.79
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1514,
+        "Yearling": 0.2188,
+        "AdultMale": 0.2206,
+        "AdultFemale": 0.4092
+      },
+      "semi": {
+        "Weaning": 0.1514,
+        "Yearling": 0.2188,
+        "AdultMale": 0.2206,
+        "AdultFemale": 0.4092
+      },
+      "intensif": {
+        "Weaning": 0.1514,
+        "Yearling": 0.2188,
+        "AdultMale": 0.2206,
+        "AdultFemale": 0.4092
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-BE",
+    "provinceName": "BENGKULU",
+    "mix": {
+      "ekstensif": 33.8,
+      "semi": 45.11,
+      "intensif": 21.09
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1991,
+        "Yearling": 0.2489,
+        "AdultMale": 0.0884,
+        "AdultFemale": 0.4637
+      },
+      "semi": {
+        "Weaning": 0.1991,
+        "Yearling": 0.2489,
+        "AdultMale": 0.0884,
+        "AdultFemale": 0.4637
+      },
+      "intensif": {
+        "Weaning": 0.1991,
+        "Yearling": 0.2489,
+        "AdultMale": 0.0884,
+        "AdultFemale": 0.4637
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-BT",
+    "provinceName": "BANTEN",
+    "mix": {
+      "ekstensif": 0.63,
+      "semi": 69.36,
+      "intensif": 30.01
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1189,
+        "Yearling": 0.4485,
+        "AdultMale": 0.1499,
+        "AdultFemale": 0.2827
+      },
+      "semi": {
+        "Weaning": 0.1189,
+        "Yearling": 0.4485,
+        "AdultMale": 0.1499,
+        "AdultFemale": 0.2827
+      },
+      "intensif": {
+        "Weaning": 0.1189,
+        "Yearling": 0.4485,
+        "AdultMale": 0.1318,
+        "AdultFemale": 0.2827
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-GO",
+    "provinceName": "GORONTALO",
+    "mix": {
+      "ekstensif": 61.86,
+      "semi": 29.32,
+      "intensif": 8.82
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1331,
+        "Yearling": 0.2382,
+        "AdultMale": 0.1131,
+        "AdultFemale": 0.5156
+      },
+      "semi": {
+        "Weaning": 0.1331,
+        "Yearling": 0.2382,
+        "AdultMale": 0.1131,
+        "AdultFemale": 0.5156
+      },
+      "intensif": {
+        "Weaning": 0.1331,
+        "Yearling": 0.2382,
+        "AdultMale": 0.1131,
+        "AdultFemale": 0.5156
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-JA",
+    "provinceName": "JAMBI",
+    "mix": {
+      "ekstensif": 39.5,
+      "semi": 7.81,
+      "intensif": 52.69
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1951,
+        "Yearling": 0.2788,
+        "AdultMale": 0.1004,
+        "AdultFemale": 0.4256
+      },
+      "semi": {
+        "Weaning": 0.1951,
+        "Yearling": 0.2788,
+        "AdultMale": 0.1004,
+        "AdultFemale": 0.4256
+      },
+      "intensif": {
+        "Weaning": 0.1951,
+        "Yearling": 0.2788,
+        "AdultMale": 0.1004,
+        "AdultFemale": 0.4256
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-JB",
+    "provinceName": "JAWA BARAT",
+    "mix": {
+      "ekstensif": 0.82,
+      "semi": 7.65,
+      "intensif": 91.53
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1543,
+        "Yearling": 0.3082,
+        "AdultMale": 0.1776,
+        "AdultFemale": 0.3601
+      },
+      "semi": {
+        "Weaning": 0.1543,
+        "Yearling": 0.3082,
+        "AdultMale": 0.1776,
+        "AdultFemale": 0.3601
+      },
+      "intensif": {
+        "Weaning": 0.1543,
+        "Yearling": 0.3082,
+        "AdultMale": 0.1776,
+        "AdultFemale": 0.3601
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-JI",
+    "provinceName": "JAWA TIMUR",
+    "mix": {
+      "ekstensif": 6.9,
+      "semi": 17.13,
+      "intensif": 75.97
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1687,
+        "Yearling": 0.2602,
+        "AdultMale": 0.0831,
+        "AdultFemale": 0.4878
+      },
+      "semi": {
+        "Weaning": 0.1687,
+        "Yearling": 0.2602,
+        "AdultMale": 0.0831,
+        "AdultFemale": 0.4878
+      },
+      "intensif": {
+        "Weaning": 0.1687,
+        "Yearling": 0.2602,
+        "AdultMale": 0.065,
+        "AdultFemale": 0.4878
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-JK",
+    "provinceName": "DKI JAKARTA",
+    "mix": {
+      "ekstensif": 0,
+      "semi": 0,
+      "intensif": 100
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0,
+        "Yearling": 0,
+        "AdultMale": 0.9309,
+        "AdultFemale": 0.0145
+      },
+      "semi": {
+        "Weaning": 0,
+        "Yearling": 0,
+        "AdultMale": 0.9309,
+        "AdultFemale": 0.0145
+      },
+      "intensif": {
+        "Weaning": 0,
+        "Yearling": 0,
+        "AdultMale": 0.9309,
+        "AdultFemale": 0.0145
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-JT",
+    "provinceName": "JAWA TENGAH",
+    "mix": {
+      "ekstensif": 0.82,
+      "semi": 7.65,
+      "intensif": 91.53
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.2019,
+        "Yearling": 0.2644,
+        "AdultMale": 0.0692,
+        "AdultFemale": 0.4644
+      },
+      "semi": {
+        "Weaning": 0.2019,
+        "Yearling": 0.2644,
+        "AdultMale": 0.0692,
+        "AdultFemale": 0.4644
+      },
+      "intensif": {
+        "Weaning": 0.2019,
+        "Yearling": 0.2644,
+        "AdultMale": 0.0511,
+        "AdultFemale": 0.4644
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-KB",
+    "provinceName": "KALIMANTAN BARAT",
+    "mix": {
+      "ekstensif": 20.84,
+      "semi": 36.63,
+      "intensif": 42.53
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.184,
+        "Yearling": 0.2736,
+        "AdultMale": 0.1623,
+        "AdultFemale": 0.3801
+      },
+      "semi": {
+        "Weaning": 0.184,
+        "Yearling": 0.2736,
+        "AdultMale": 0.1623,
+        "AdultFemale": 0.3801
+      },
+      "intensif": {
+        "Weaning": 0.184,
+        "Yearling": 0.2736,
+        "AdultMale": 0.1623,
+        "AdultFemale": 0.3801
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-KI",
+    "provinceName": "KALIMANTAN TIMUR",
+    "mix": {
+      "ekstensif": 26.45,
+      "semi": 45.35,
+      "intensif": 28.17
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1658,
+        "Yearling": 0.245,
+        "AdultMale": 0.1741,
+        "AdultFemale": 0.4152
+      },
+      "semi": {
+        "Weaning": 0.1658,
+        "Yearling": 0.245,
+        "AdultMale": 0.1741,
+        "AdultFemale": 0.4152
+      },
+      "intensif": {
+        "Weaning": 0.1658,
+        "Yearling": 0.245,
+        "AdultMale": 0.1741,
+        "AdultFemale": 0.4152
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-KR",
+    "provinceName": "KEP. RIAU",
+    "mix": {
+      "ekstensif": 60.47,
+      "semi": 28.94,
+      "intensif": 10.59
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1774,
+        "Yearling": 0.2755,
+        "AdultMale": 0.1191,
+        "AdultFemale": 0.4279
+      },
+      "semi": {
+        "Weaning": 0.1774,
+        "Yearling": 0.2755,
+        "AdultMale": 0.1191,
+        "AdultFemale": 0.4279
+      },
+      "intensif": {
+        "Weaning": 0.1774,
+        "Yearling": 0.2755,
+        "AdultMale": 0.1191,
+        "AdultFemale": 0.4279
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-KS",
+    "provinceName": "KALIMANTAN SELATAN",
+    "mix": {
+      "ekstensif": 5.68,
+      "semi": 52.01,
+      "intensif": 42.31
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.194,
+        "Yearling": 0.2779,
+        "AdultMale": 0.1133,
+        "AdultFemale": 0.4149
+      },
+      "semi": {
+        "Weaning": 0.194,
+        "Yearling": 0.2779,
+        "AdultMale": 0.1133,
+        "AdultFemale": 0.4149
+      },
+      "intensif": {
+        "Weaning": 0.194,
+        "Yearling": 0.2779,
+        "AdultMale": 0.1133,
+        "AdultFemale": 0.4149
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-KT",
+    "provinceName": "KALIMANTAN TENGAH",
+    "mix": {
+      "ekstensif": 25.9,
+      "semi": 24.81,
+      "intensif": 49.29
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1509,
+        "Yearling": 0.2493,
+        "AdultMale": 0.1712,
+        "AdultFemale": 0.4285
+      },
+      "semi": {
+        "Weaning": 0.1509,
+        "Yearling": 0.2493,
+        "AdultMale": 0.1712,
+        "AdultFemale": 0.4285
+      },
+      "intensif": {
+        "Weaning": 0.1509,
+        "Yearling": 0.2493,
+        "AdultMale": 0.1712,
+        "AdultFemale": 0.4285
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-KU",
+    "provinceName": "KALIMANTAN UTARA",
+    "mix": {
+      "ekstensif": 31.75,
+      "semi": 47.67,
+      "intensif": 20.58
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1984,
+        "Yearling": 0.2447,
+        "AdultMale": 0.1144,
+        "AdultFemale": 0.4425
+      },
+      "semi": {
+        "Weaning": 0.1984,
+        "Yearling": 0.2447,
+        "AdultMale": 0.1144,
+        "AdultFemale": 0.4425
+      },
+      "intensif": {
+        "Weaning": 0.1984,
+        "Yearling": 0.2447,
+        "AdultMale": 0.1144,
+        "AdultFemale": 0.4425
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-LA",
+    "provinceName": "LAMPUNG",
+    "mix": {
+      "ekstensif": 2.59,
+      "semi": 35.2,
+      "intensif": 62.21
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.2073,
+        "Yearling": 0.2468,
+        "AdultMale": 0.0632,
+        "AdultFemale": 0.4827
+      },
+      "semi": {
+        "Weaning": 0.2073,
+        "Yearling": 0.2468,
+        "AdultMale": 0.0632,
+        "AdultFemale": 0.4827
+      },
+      "intensif": {
+        "Weaning": 0.2073,
+        "Yearling": 0.2468,
+        "AdultMale": 0.0451,
+        "AdultFemale": 0.4827
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-MA",
+    "provinceName": "MALUKU",
+    "mix": {
+      "ekstensif": 79.77,
+      "semi": 19.54,
+      "intensif": 0.69
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1725,
+        "Yearling": 0.241,
+        "AdultMale": 0.1213,
+        "AdultFemale": 0.4653
+      },
+      "semi": {
+        "Weaning": 0.1725,
+        "Yearling": 0.241,
+        "AdultMale": 0.1213,
+        "AdultFemale": 0.4653
+      },
+      "intensif": {
+        "Weaning": 0.1725,
+        "Yearling": 0.241,
+        "AdultMale": 0.1213,
+        "AdultFemale": 0.4653
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-MU",
+    "provinceName": "MALUKU UTARA",
+    "mix": {
+      "ekstensif": 6.9,
+      "semi": 17.13,
+      "intensif": 75.97
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1737,
+        "Yearling": 0.2209,
+        "AdultMale": 0.1486,
+        "AdultFemale": 0.4568
+      },
+      "semi": {
+        "Weaning": 0.1737,
+        "Yearling": 0.2209,
+        "AdultMale": 0.1486,
+        "AdultFemale": 0.4568
+      },
+      "intensif": {
+        "Weaning": 0.1737,
+        "Yearling": 0.2209,
+        "AdultMale": 0.1486,
+        "AdultFemale": 0.4568
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-NB",
+    "provinceName": "NUSA TENGGARA BARAT",
+    "mix": {
+      "ekstensif": 6.9,
+      "semi": 17.13,
+      "intensif": 75.97
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1981,
+        "Yearling": 0.2633,
+        "AdultMale": 0.0881,
+        "AdultFemale": 0.4506
+      },
+      "semi": {
+        "Weaning": 0.1981,
+        "Yearling": 0.2633,
+        "AdultMale": 0.0881,
+        "AdultFemale": 0.4506
+      },
+      "intensif": {
+        "Weaning": 0.1981,
+        "Yearling": 0.2633,
+        "AdultMale": 0.0881,
+        "AdultFemale": 0.4506
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-NT",
+    "provinceName": "NUSA TENGGARA TIMUR",
+    "mix": {
+      "ekstensif": 1,
+      "semi": 17.13,
+      "intensif": 1
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1333,
+        "Yearling": 0.2123,
+        "AdultMale": 0.1471,
+        "AdultFemale": 0.5073
+      },
+      "semi": {
+        "Weaning": 0.1333,
+        "Yearling": 0.2123,
+        "AdultMale": 0.1471,
+        "AdultFemale": 0.5073
+      },
+      "intensif": {
+        "Weaning": 0.1333,
+        "Yearling": 0.2123,
+        "AdultMale": 0.1471,
+        "AdultFemale": 0.5073
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-PA",
+    "provinceName": "PAPUA",
+    "mix": {
+      "ekstensif": 50.23,
+      "semi": 34.99,
+      "intensif": 14.78
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1796,
+        "Yearling": 0.2617,
+        "AdultMale": 0.1528,
+        "AdultFemale": 0.4058
+      },
+      "semi": {
+        "Weaning": 0.1796,
+        "Yearling": 0.2617,
+        "AdultMale": 0.1528,
+        "AdultFemale": 0.4058
+      },
+      "intensif": {
+        "Weaning": 0.1796,
+        "Yearling": 0.2617,
+        "AdultMale": 0.1528,
+        "AdultFemale": 0.4058
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-PB",
+    "provinceName": "PAPUA BARAT",
+    "mix": {
+      "ekstensif": 76.45,
+      "semi": 19.35,
+      "intensif": 4.2
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.2047,
+        "Yearling": 0.2552,
+        "AdultMale": 0.1408,
+        "AdultFemale": 0.3993
+      },
+      "semi": {
+        "Weaning": 0.2047,
+        "Yearling": 0.2552,
+        "AdultMale": 0.1408,
+        "AdultFemale": 0.3993
+      },
+      "intensif": {
+        "Weaning": 0.2047,
+        "Yearling": 0.2552,
+        "AdultMale": 0.1408,
+        "AdultFemale": 0.3993
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-PP",
+    "provinceName": "PAPUA PEGUNUNGAN",
+    "mix": {
+      "ekstensif": 62.5,
+      "semi": 25.8,
+      "intensif": 11.7
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1796,
+        "Yearling": 0.2617,
+        "AdultMale": 0.1528,
+        "AdultFemale": 0.4058
+      },
+      "semi": {
+        "Weaning": 0.1796,
+        "Yearling": 0.2617,
+        "AdultMale": 0.1528,
+        "AdultFemale": 0.4058
+      },
+      "intensif": {
+        "Weaning": 0.1796,
+        "Yearling": 0.2617,
+        "AdultMale": 0.1528,
+        "AdultFemale": 0.4058
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-PS",
+    "provinceName": "PAPUA SELATAN",
+    "mix": {
+      "ekstensif": 43.2,
+      "semi": 37.9,
+      "intensif": 18.9
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1796,
+        "Yearling": 0.2617,
+        "AdultMale": 0.1528,
+        "AdultFemale": 0.4058
+      },
+      "semi": {
+        "Weaning": 0.1796,
+        "Yearling": 0.2617,
+        "AdultMale": 0.1528,
+        "AdultFemale": 0.4058
+      },
+      "intensif": {
+        "Weaning": 0.1796,
+        "Yearling": 0.2617,
+        "AdultMale": 0.1528,
+        "AdultFemale": 0.4058
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-PT",
+    "provinceName": "PAPUA TENGAH",
+    "mix": {
+      "ekstensif": 48.3,
+      "semi": 36.1,
+      "intensif": 15.6
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1796,
+        "Yearling": 0.2617,
+        "AdultMale": 0.1528,
+        "AdultFemale": 0.4058
+      },
+      "semi": {
+        "Weaning": 0.1796,
+        "Yearling": 0.2617,
+        "AdultMale": 0.1528,
+        "AdultFemale": 0.4058
+      },
+      "intensif": {
+        "Weaning": 0.1796,
+        "Yearling": 0.2617,
+        "AdultMale": 0.1528,
+        "AdultFemale": 0.4058
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-PY",
+    "provinceName": "PAPUA BARAT DAYA",
+    "mix": {
+      "ekstensif": 35.4,
+      "semi": 42.7,
+      "intensif": 21.9
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1796,
+        "Yearling": 0.2617,
+        "AdultMale": 0.1528,
+        "AdultFemale": 0.4058
+      },
+      "semi": {
+        "Weaning": 0.1796,
+        "Yearling": 0.2617,
+        "AdultMale": 0.1528,
+        "AdultFemale": 0.4058
+      },
+      "intensif": {
+        "Weaning": 0.1796,
+        "Yearling": 0.2617,
+        "AdultMale": 0.1528,
+        "AdultFemale": 0.4058
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-RI",
+    "provinceName": "RIAU",
+    "mix": {
+      "ekstensif": 6.9,
+      "semi": 17.13,
+      "intensif": 75.97
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.2267,
+        "Yearling": 0.2497,
+        "AdultMale": 0.0872,
+        "AdultFemale": 0.4364
+      },
+      "semi": {
+        "Weaning": 0.2267,
+        "Yearling": 0.2497,
+        "AdultMale": 0.0872,
+        "AdultFemale": 0.4364
+      },
+      "intensif": {
+        "Weaning": 0.2267,
+        "Yearling": 0.2497,
+        "AdultMale": 0.0872,
+        "AdultFemale": 0.4364
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-SA",
+    "provinceName": "SULAWESI UTARA",
+    "mix": {
+      "ekstensif": 6.9,
+      "semi": 17.13,
+      "intensif": 75.97
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.125,
+        "Yearling": 0.2119,
+        "AdultMale": 0.1799,
+        "AdultFemale": 0.4832
+      },
+      "semi": {
+        "Weaning": 0.125,
+        "Yearling": 0.2119,
+        "AdultMale": 0.1799,
+        "AdultFemale": 0.4832
+      },
+      "intensif": {
+        "Weaning": 0.125,
+        "Yearling": 0.2119,
+        "AdultMale": 0.1799,
+        "AdultFemale": 0.4832
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-SB",
+    "provinceName": "SUMATERA BARAT",
+    "mix": {
+      "ekstensif": 2.45,
+      "semi": 33.32,
+      "intensif": 64.23
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1909,
+        "Yearling": 0.2596,
+        "AdultMale": 0.0808,
+        "AdultFemale": 0.4688
+      },
+      "semi": {
+        "Weaning": 0.1909,
+        "Yearling": 0.2596,
+        "AdultMale": 0.0808,
+        "AdultFemale": 0.4688
+      },
+      "intensif": {
+        "Weaning": 0.1909,
+        "Yearling": 0.2596,
+        "AdultMale": 0.0808,
+        "AdultFemale": 0.4688
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-SG",
+    "provinceName": "SULAWESI TENGGARA",
+    "mix": {
+      "ekstensif": 43.38,
+      "semi": 42.23,
+      "intensif": 14.39
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1765,
+        "Yearling": 0.2183,
+        "AdultMale": 0.0799,
+        "AdultFemale": 0.5253
+      },
+      "semi": {
+        "Weaning": 0.1765,
+        "Yearling": 0.2183,
+        "AdultMale": 0.0799,
+        "AdultFemale": 0.5253
+      },
+      "intensif": {
+        "Weaning": 0.1765,
+        "Yearling": 0.2183,
+        "AdultMale": 0.0799,
+        "AdultFemale": 0.5253
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-SN",
+    "provinceName": "SULAWESI SELATAN",
+    "mix": {
+      "ekstensif": 6.9,
+      "semi": 17.13,
+      "intensif": 75.97
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.181,
+        "Yearling": 0.2268,
+        "AdultMale": 0.0915,
+        "AdultFemale": 0.5007
+      },
+      "semi": {
+        "Weaning": 0.181,
+        "Yearling": 0.2268,
+        "AdultMale": 0.0915,
+        "AdultFemale": 0.5007
+      },
+      "intensif": {
+        "Weaning": 0.181,
+        "Yearling": 0.2268,
+        "AdultMale": 0.0915,
+        "AdultFemale": 0.5007
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-SR",
+    "provinceName": "SULAWESI BARAT",
+    "mix": {
+      "ekstensif": 6.8,
+      "semi": 17.3,
+      "intensif": 75.9
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1931,
+        "Yearling": 0.2251,
+        "AdultMale": 0.0705,
+        "AdultFemale": 0.5114
+      },
+      "semi": {
+        "Weaning": 0.1931,
+        "Yearling": 0.2251,
+        "AdultMale": 0.0705,
+        "AdultFemale": 0.5114
+      },
+      "intensif": {
+        "Weaning": 0.1931,
+        "Yearling": 0.2251,
+        "AdultMale": 0.0705,
+        "AdultFemale": 0.5114
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-SS",
+    "provinceName": "SUMATERA SELATAN",
+    "mix": {
+      "ekstensif": 1.9,
+      "semi": 54.81,
+      "intensif": 43.29
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1792,
+        "Yearling": 0.2593,
+        "AdultMale": 0.124,
+        "AdultFemale": 0.4374
+      },
+      "semi": {
+        "Weaning": 0.1792,
+        "Yearling": 0.2593,
+        "AdultMale": 0.124,
+        "AdultFemale": 0.4374
+      },
+      "intensif": {
+        "Weaning": 0.1792,
+        "Yearling": 0.2593,
+        "AdultMale": 0.124,
+        "AdultFemale": 0.4374
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-ST",
+    "provinceName": "SULAWESI TENGAH",
+    "mix": {
+      "ekstensif": 21.52,
+      "semi": 35.97,
+      "intensif": 42.51
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.1571,
+        "Yearling": 0.2328,
+        "AdultMale": 0.1281,
+        "AdultFemale": 0.4821
+      },
+      "semi": {
+        "Weaning": 0.1571,
+        "Yearling": 0.2328,
+        "AdultMale": 0.1281,
+        "AdultFemale": 0.4821
+      },
+      "intensif": {
+        "Weaning": 0.1571,
+        "Yearling": 0.2328,
+        "AdultMale": 0.1281,
+        "AdultFemale": 0.4821
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-SU",
+    "provinceName": "SUMATERA UTARA",
+    "mix": {
+      "ekstensif": 6.9,
+      "semi": 17.13,
+      "intensif": 75.97
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.2146,
+        "Yearling": 0.2234,
+        "AdultMale": 0.0885,
+        "AdultFemale": 0.4736
+      },
+      "semi": {
+        "Weaning": 0.2146,
+        "Yearling": 0.2234,
+        "AdultMale": 0.0885,
+        "AdultFemale": 0.4736
+      },
+      "intensif": {
+        "Weaning": 0.2146,
+        "Yearling": 0.2234,
+        "AdultMale": 0.0885,
+        "AdultFemale": 0.4736
+      }
+    }
+  },
+  {
+    "provinceCode": "ID-YO",
+    "provinceName": "DI YOGYAKARTA",
+    "mix": {
+      "ekstensif": 0,
+      "semi": 10.12,
+      "intensif": 89.88
+    },
+    "distro": {
+      "ekstensif": {
+        "Weaning": 0.182,
+        "Yearling": 0.2549,
+        "AdultMale": 0.0688,
+        "AdultFemale": 0.4943
+      },
+      "semi": {
+        "Weaning": 0.182,
+        "Yearling": 0.2549,
+        "AdultMale": 0.0688,
+        "AdultFemale": 0.4943
+      },
+      "intensif": {
+        "Weaning": 0.182,
+        "Yearling": 0.2549,
+        "AdultMale": 0.0688,
+        "AdultFemale": 0.4943
+      }
+    }
+  }
+]

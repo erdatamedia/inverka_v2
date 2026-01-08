@@ -1,0 +1,48 @@
+{
+  "id": "1891fcae-693d-4659-9606-881eaa6166b2",
+  "createdAt": "2025-11-11T06:12:47.479Z",
+  "updatedAt": "2025-11-11T06:17:57.462Z",
+  "createdBy": "petugas.id-su@inverka.app",
+  "province": "ID-SU",
+  "year": 2025,
+  "status": "ditolak",
+  "payload": {
+    "year": 2025,
+    "region_id": "ID-SU",
+    "total_population": 10000,
+    "mitigations": [
+      {
+        "action_id": "mitigation-rumput-budidaya-limbah-peternakan-konsentrat",
+        "coverage": 0.4
+      },
+      {
+        "action_id": "mitigation-jerami-padi-rumput-lapang-konsentrat",
+        "coverage": 0.95
+      }
+    ]
+  },
+  "result": {
+    "summary": {
+      "baseline": 4689.75,
+      "mitigated": 4689.81,
+      "reduction": -0.06,
+      "percent": 0
+    },
+    "by_gas": {
+      "CH4": 4.132,
+      "N2O": 0.558,
+      "total": 4.69
+    },
+    "manure": {
+      "CH4": 1057.28,
+      "N2O_dir": 407.27,
+      "N2O_ind": 150.58,
+      "total": 1615.13
+    },
+    "enteric": {
+      "CH4_ton": 109.81,
+      "CH4_CO2e": 3074.68,
+      "CH4_Gg": 3.075
+    }
+  }
+}
