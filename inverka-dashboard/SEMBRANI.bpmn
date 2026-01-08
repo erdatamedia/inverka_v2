@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             targetNamespace="http://example.com/bank-sampah-graha-sembrani">
+
+  <!-- ========================================================= -->
+  <!-- 1. PROSES SETOR SAMPAH                                   -->
+  <!-- ========================================================= -->
+  <process id="Process_SetorSampah" name="Proses Setor Sampah" isExecutable="false">
+
+    <laneSet id="LaneSet_SetorSampah">
+      <lane id="Lane_Nasabah_Setor" name="Nasabah">
+        <flowNodeRef>StartEvent_Setor</flowNodeRef>
+        <flowNodeRef>Task_Nasabah_SerahkanSampah</flowNodeRef>
+        <flowNodeRef>EndEvent_Setor</flowNodeRef>
+      </lane>
+      <lane id="Lane_Pengurus_Setor" name="Pengurus">
+        <flowNodeRef>Task_Pengurus_TerimaSampah</flowNodeRef>
+        <flowNodeRef>Task_Pengurus_TimbangSampah</flowNodeRef>
+        <flowNodeRef>Task_Pengurus_InputDataSetor</flowNodeRef>
+        <flowNodeRef>Task_Pengurus_CetakBuktiSetor</flowNodeRef>
+      </lane>
+      <lane id="Lane_Sistem_Setor" name="Sistem Informasi">
+        <flowNodeRef>Task_Sistem_ValidasiNasabah</flowNodeRef>
+        <flowNodeRef>Task_Sistem_HitungNilaiSetor</flowNodeRef>
+        <flowNodeRef>Task_Sistem_SimpanTransaksiSetor</flowNodeRef>
+        <flowNodeRef>Task_Sistem_UpdateSaldoNasabah</flowNodeRef>
+        <flowNodeRef>Task_Sistem_GenerateBuktiSetor</flowNodeRef>
+      </lane>
+    </laneSet>
+
+    <!-- Events -->
+    <startEvent id="StartEvent_Setor" name="Nasabah Datang Membawa Sampah"/>
+    <endEvent id="EndEvent_Setor" name="Setor Selesai">
+      <incoming>Flow_Pengurus_CetakBukti_to_End</incoming>
+    </endEvent>
+
+    <!-- Tasks - Nasabah -->
+    <task id="Task_Nasabah_SerahkanSampah" name="Serahkan sampah ke pengurus">
+      <incoming>Flow_Start_to_Nasabah_Serahkan</incoming>
+      <outgoing>Flow_Nasabah_Serahkan_to_Pengurus_Terima</outgoing>
+    </task>
+
+    <!-- Tasks - Pengurus -->
+    <task id="Task_Pengurus_TerimaSampah" name="Terima sampah dari nasabah">
+      <incoming>Flow_Nasabah_Serahkan_to_Pengurus_Terima</incoming>
+      <outgoing>Flow_Pengurus_Terima_to_Timbang</outgoing>
+    </task>
+
+    <task id="Task_Pengurus_TimbangSampah" name="Timbang sampah per jenis">
+      <incoming>Flow_Pengurus_Terima_to_Timbang</incoming>
+      <outgoing>Flow_Pengurus_Timbang_to_Input</outgoing>
+    </task>
+
+    <task id="Task_Pengurus_InputDataSetor" name="Input data setoran ke sistem">
+      <incoming>Flow_Pengurus_Timbang_to_Input</incoming>
+      <outgoing>Flow_Pengurus_Input_to_Sistem_Validasi</outgoing>
+    </task>
+
+    <task id="Task_Pengurus_CetakBuktiSetor" name="Cetak / tunjukkan bukti setoran">
+      <incoming>Flow_Sistem_GenerateBukti_to_Pengurus_Cetak</incoming>
+      <outgoing>Flow_Pengurus_CetakBukti_to_End</outgoing>
+    </task>
+
+    <!-- Tasks - Sistem Informasi -->
+    <task id="Task_Sistem_ValidasiNasabah" name="Validasi data nasabah">
+      <incoming>Flow_Pengurus_Input_to_Sistem_Validasi</incoming>
+      <outgoing>Flow_Sistem_Validasi_to_HitungNilai</outgoing>
+    </task>
+
+    <task id="Task_Sistem_HitungNilaiSetor" name="Hitung nilai setoran (berat x harga)">
+      <incoming>Flow_Sistem_Validasi_to_HitungNilai</incoming>
+      <outgoing>Flow_Sistem_HitungNilai_to_SimpanTrx</outgoing>
+    </task>
+
+    <task id="Task_Sistem_SimpanTransaksiSetor" name="Simpan transaksi setoran">
+      <incoming>Flow_Sistem_HitungNilai_to_SimpanTrx</incoming>
+      <outgoing>Flow_Sistem_SimpanTrx_to_UpdateSaldo</outgoing>
+    </task>
+
+    <task id="Task_Sistem_UpdateSaldoNasabah" name="Update saldo nasabah">
+      <incoming>Flow_Sistem_SimpanTrx_to_UpdateSaldo</incoming>
+      <outgoing>Flow_Sistem_UpdateSaldo_to_GenerateBukti</outgoing>
+    </task>
+
+    <task id="Task_Sistem_GenerateBuktiSetor" name="Generate bukti setoran">
+      <incoming>Flow_Sistem_UpdateSaldo_to_GenerateBukti</incoming>
+      <outgoing>Flow_Sistem_GenerateBukti_to_Pengurus_Cetak</outgoing>
+    </task>
+
+    <!-- Sequence Flows -->
+    <sequenceFlow id="Flow_Start_to_Nasabah_Serahkan"
+                  sourceRef="StartEvent_Setor"
+                  targetRef="Task_Nasabah_SerahkanSampah"/>
+    <sequenceFlow id="Flow_Nasabah_Serahkan_to_Pengurus_Terima"
+                  sourceRef="Task_Nasabah_SerahkanSampah"
+                  targetRef="Task_Pengurus_TerimaSampah"/>
+    <sequenceFlow id="Flow_Pengurus_Terima_to_Timbang"
+                  sourceRef="Task_Pengurus_TerimaSampah"
+                  targetRef="Task_Pengurus_TimbangSampah"/>
+    <sequenceFlow id="Flow_Pengurus_Timbang_to_Input"
+                  sourceRef="Task_Pengurus_TimbangSampah"
+                  targetRef="Task_Pengurus_InputDataSetor"/>
+    <sequenceFlow id="Flow_Pengurus_Input_to_Sistem_Validasi"
+                  sourceRef="Task_Pengurus_InputDataSetor"
+                  targetRef="Task_Sistem_ValidasiNasabah"/>
+    <sequenceFlow id="Flow_Sistem_Validasi_to_HitungNilai"
+                  sourceRef="Task_Sistem_ValidasiNasabah"
+                  targetRef="Task_Sistem_HitungNilaiSetor"/>
+    <sequenceFlow id="Flow_Sistem_HitungNilai_to_SimpanTrx"
+                  sourceRef="Task_Sistem_HitungNilaiSetor"
+                  targetRef="Task_Sistem_SimpanTransaksiSetor"/>
+    <sequenceFlow id="Flow_Sistem_SimpanTrx_to_UpdateSaldo"
+                  sourceRef="Task_Sistem_SimpanTransaksiSetor"
+                  targetRef="Task_Sistem_UpdateSaldoNasabah"/>
+    <sequenceFlow id="Flow_Sistem_UpdateSaldo_to_GenerateBukti"
+                  sourceRef="Task_Sistem_UpdateSaldoNasabah"
+                  targetRef="Task_Sistem_GenerateBuktiSetor"/>
+    <sequenceFlow id="Flow_Sistem_GenerateBukti_to_Pengurus_Cetak"
+                  sourceRef="Task_Sistem_GenerateBuktiSetor"
+                  targetRef="Task_Pengurus_CetakBuktiSetor"/>
+    <sequenceFlow id="Flow_Pengurus_CetakBukti_to_End"
+                  sourceRef="Task_Pengurus_CetakBuktiSetor"
+                  targetRef="EndEvent_Setor"/>
+
+  </process>
+
+  <!-- ========================================================= -->
+  <!-- 2. PROSES PENARIKAN SALDO                                -->
+  <!-- ========================================================= -->
+  <process id="Process_TarikSaldo" name="Proses Penarikan Saldo" isExecutable="false">
+
+    <laneSet id="LaneSet_TarikSaldo">
+      <lane id="Lane_Nasabah_Tarik" name="Nasabah">
+        <flowNodeRef>StartEvent_Tarik</flowNodeRef>
+        <flowNodeRef>Task_Nasabah_AjukanTarik</flowNodeRef>
+        <flowNodeRef>EndEvent_Tarik</flowNodeRef>
+      </lane>
+      <lane id="Lane_Pengurus_Tarik" name="Pengurus">
+        <flowNodeRef>Task_Pengurus_TerimaPermohonanTarik</flowNodeRef>
+        <flowNodeRef>Task_Pengurus_InputTarik</flowNodeRef>
+      </lane>
+      <lane id="Lane_Sistem_Tarik" name="Sistem Informasi">
+        <flowNodeRef>Task_Sistem_ValidasiSaldo</flowNodeRef>
+        <flowNodeRef>Task_Sistem_SimpanTrxTarik</flowNodeRef>
+        <flowNodeRef>Task_Sistem_UpdateSaldoTarik</flowNodeRef>
+        <flowNodeRef>Task_Sistem_BuktiTarik</flowNodeRef>
+      </lane>
+      <lane id="Lane_Bendahara_Tarik" name="Bendahara">
+        <flowNodeRef>Task_Bendahara_SerahkanUang</flowNodeRef>
+      </lane>
+    </laneSet>
+
+    <!-- Events -->
+    <startEvent id="StartEvent_Tarik" name="Nasabah Ajukan Tarik Saldo"/>
+    <endEvent id="EndEvent_Tarik" name="Penarikan Selesai">
+      <incoming>Flow_Bendahara_to_End_Tarik</incoming>
+    </endEvent>
+
+    <!-- Tasks - Nasabah -->
+    <task id="Task_Nasabah_AjukanTarik" name="Ajukan permohonan tarik saldo">
+      <incoming>Flow_Start_to_Nasabah_AjukanTarik</incoming>
+      <outgoing>Flow_Nasabah_Ajukan_to_Pengurus_Terima</outgoing>
+    </task>
+
+    <!-- Tasks - Pengurus -->
+    <task id="Task_Pengurus_TerimaPermohonanTarik" name="Terima permohonan tarik saldo">
+      <incoming>Flow_Nasabah_Ajukan_to_Pengurus_Terima</incoming>
+      <outgoing>Flow_Pengurus_Terima_to_InputTarik</outgoing>
+    </task>
+
+    <task id="Task_Pengurus_InputTarik" name="Input data penarikan ke sistem">
+      <incoming>Flow_Pengurus_Terima_to_InputTarik</incoming>
+      <outgoing>Flow_Pengurus_InputTarik_to_Sistem_ValidasiSaldo</outgoing>
+    </task>
+
+    <!-- Tasks - Sistem Informasi -->
+    <task id="Task_Sistem_ValidasiSaldo" name="Validasi saldo mencukupi">
+      <incoming>Flow_Pengurus_InputTarik_to_Sistem_ValidasiSaldo</incoming>
+      <outgoing>Flow_Sistem_ValidasiSaldo_to_SimpanTrxTarik</outgoing>
+    </task>
+
+    <task id="Task_Sistem_SimpanTrxTarik" name="Simpan transaksi penarikan">
+      <incoming>Flow_Sistem_ValidasiSaldo_to_SimpanTrxTarik</incoming>
+      <outgoing>Flow_Sistem_SimpanTrxTarik_to_UpdateSaldoTarik</outgoing>
+    </task>
+
+    <task id="Task_Sistem_UpdateSaldoTarik" name="Update saldo nasabah (kurangi)">
+      <incoming>Flow_Sistem_SimpanTrxTarik_to_UpdateSaldoTarik</incoming>
+      <outgoing>Flow_Sistem_UpdateSaldoTarik_to_BuktiTarik</outgoing>
+    </task>
+
+    <task id="Task_Sistem_BuktiTarik" name="Generate bukti penarikan">
+      <incoming>Flow_Sistem_UpdateSaldoTarik_to_BuktiTarik</incoming>
+      <outgoing>Flow_Sistem_BuktiTarik_to_Bendahara</outgoing>
+    </task>
+
+    <!-- Tasks - Bendahara -->
+    <task id="Task_Bendahara_SerahkanUang" name="Serahkan uang tunai ke nasabah">
+      <incoming>Flow_Sistem_BuktiTarik_to_Bendahara</incoming>
+      <outgoing>Flow_Bendahara_to_End_Tarik</outgoing>
+    </task>
+
+    <!-- Sequence Flows -->
+    <sequenceFlow id="Flow_Start_to_Nasabah_AjukanTarik"
+                  sourceRef="StartEvent_Tarik"
+                  targetRef="Task_Nasabah_AjukanTarik"/>
+    <sequenceFlow id="Flow_Nasabah_Ajukan_to_Pengurus_Terima"
+                  sourceRef="Task_Nasabah_AjukanTarik"
+                  targetRef="Task_Pengurus_TerimaPermohonanTarik"/>
+    <sequenceFlow id="Flow_Pengurus_Terima_to_InputTarik"
+                  sourceRef="Task_Pengurus_TerimaPermohonanTarik"
+                  targetRef="Task_Pengurus_InputTarik"/>
+    <sequenceFlow id="Flow_Pengurus_InputTarik_to_Sistem_ValidasiSaldo"
+                  sourceRef="Task_Pengurus_InputTarik"
+                  targetRef="Task_Sistem_ValidasiSaldo"/>
+    <sequenceFlow id="Flow_Sistem_ValidasiSaldo_to_SimpanTrxTarik"
+                  sourceRef="Task_Sistem_ValidasiSaldo"
+                  targetRef="Task_Sistem_SimpanTrxTarik"/>
+    <sequenceFlow id="Flow_Sistem_SimpanTrxTarik_to_UpdateSaldoTarik"
+                  sourceRef="Task_Sistem_SimpanTrxTarik"
+                  targetRef="Task_Sistem_UpdateSaldoTarik"/>
+    <sequenceFlow id="Flow_Sistem_UpdateSaldoTarik_to_BuktiTarik"
+                  sourceRef="Task_Sistem_UpdateSaldoTarik"
+                  targetRef="Task_Sistem_BuktiTarik"/>
+    <sequenceFlow id="Flow_Sistem_BuktiTarik_to_Bendahara"
+                  sourceRef="Task_Sistem_BuktiTarik"
+                  targetRef="Task_Bendahara_SerahkanUang"/>
+    <sequenceFlow id="Flow_Bendahara_to_End_Tarik"
+                  sourceRef="Task_Bendahara_SerahkanUang"
+                  targetRef="EndEvent_Tarik"/>
+
+  </process>
+
+  <!-- ========================================================= -->
+  <!-- 3. PROSES PENJUALAN SAMPAH KE PENGEPUL                    -->
+  <!-- ========================================================= -->
+  <process id="Process_PenjualanPengepul" name="Proses Penjualan Sampah ke Pengepul" isExecutable="false">
+
+    <laneSet id="LaneSet_PenjualanPengepul">
+      <lane id="Lane_Pengurus_Jual" name="Pengurus">
+        <flowNodeRef>StartEvent_Jual</flowNodeRef>
+        <flowNodeRef>Task_Pengurus_KumpulkanSampahJual</flowNodeRef>
+        <flowNodeRef>Task_Pengurus_CatatTrxKeluar</flowNodeRef>
+        <flowNodeRef>EndEvent_Jual</flowNodeRef>
+      </lane>
+      <lane id="Lane_Pengepul_Jual" name="Pengepul">
+        <flowNodeRef>Task_Pengepul_TimbangDanSepakatiHarga</flowNodeRef>
+      </lane>
+      <lane id="Lane_Sistem_Jual" name="Sistem Informasi">
+        <flowNodeRef>Task_Sistem_SimpanTrxKeluar</flowNodeRef>
+        <flowNodeRef>Task_Sistem_LaporanPenerimaan</flowNodeRef>
+      </lane>
+      <lane id="Lane_Bendahara_Jual" name="Bendahara">
+        <flowNodeRef>Task_Bendahara_TerimaKasDariPengepul</flowNodeRef>
+      </lane>
+    </laneSet>
+
+    <!-- Events -->
+    <startEvent id="StartEvent_Jual" name="Sampah Siap Dijual ke Pengepul"/>
+    <endEvent id="EndEvent_Jual" name="Penjualan Selesai">
+      <incoming>Flow_BendaharaKas_to_End_Jual</incoming>
+    </endEvent>
+
+    <!-- Tasks - Pengurus -->
+    <task id="Task_Pengurus_KumpulkanSampahJual" name="Kumpulkan sampah siap jual">
+      <incoming>Flow_Start_to_KumpulkanJual</incoming>
+      <outgoing>Flow_KumpulkanJual_to_Pengepul_Timbang</outgoing>
+    </task>
+
+    <task id="Task_Pengurus_CatatTrxKeluar" name="Catat transaksi penjualan ke sistem">
+      <incoming>Flow_Pengepul_Timbang_to_CatatTrxKeluar</incoming>
+      <outgoing>Flow_CatatTrxKeluar_to_Sistem_SimpanTrxKeluar</outgoing>
+    </task>
+
+    <!-- Tasks - Pengepul -->
+    <task id="Task_Pengepul_TimbangDanSepakatiHarga" name="Timbang & sepakati harga">
+      <incoming>Flow_KumpulkanJual_to_Pengepul_Timbang</incoming>
+      <outgoing>Flow_Pengepul_Timbang_to_CatatTrxKeluar</outgoing>
+    </task>
+
+    <!-- Tasks - Sistem Informasi -->
+    <task id="Task_Sistem_SimpanTrxKeluar" name="Simpan transaksi penjualan (keluar)">
+      <incoming>Flow_CatatTrxKeluar_to_Sistem_SimpanTrxKeluar</incoming>
+      <outgoing>Flow_Sistem_SimpanTrxKeluar_to_LaporanPenerimaan</outgoing>
+    </task>
+
+    <task id="Task_Sistem_LaporanPenerimaan" name="Hasilkan laporan penerimaan kas">
+      <incoming>Flow_Sistem_SimpanTrxKeluar_to_LaporanPenerimaan</incoming>
+      <outgoing>Flow_Sistem_LaporanPenerimaan_to_BendaharaKas</outgoing>
+    </task>
+
+    <!-- Tasks - Bendahara -->
+    <task id="Task_Bendahara_TerimaKasDariPengepul" name="Terima kas dari pengepul">
+      <incoming>Flow_Sistem_LaporanPenerimaan_to_BendaharaKas</incoming>
+      <outgoing>Flow_BendaharaKas_to_End_Jual</outgoing>
+    </task>
+
+    <!-- Sequence Flows -->
+    <sequenceFlow id="Flow_Start_to_KumpulkanJual"
+                  sourceRef="StartEvent_Jual"
+                  targetRef="Task_Pengurus_KumpulkanSampahJual"/>
+    <sequenceFlow id="Flow_KumpulkanJual_to_Pengepul_Timbang"
+                  sourceRef="Task_Pengurus_KumpulkanSampahJual"
+                  targetRef="Task_Pengepul_TimbangDanSepakatiHarga"/>
+    <sequenceFlow id="Flow_Pengepul_Timbang_to_CatatTrxKeluar"
+                  sourceRef="Task_Pengepul_TimbangDanSepakatiHarga"
+                  targetRef="Task_Pengurus_CatatTrxKeluar"/>
+    <sequenceFlow id="Flow_CatatTrxKeluar_to_Sistem_SimpanTrxKeluar"
+                  sourceRef="Task_Pengurus_CatatTrxKeluar"
+                  targetRef="Task_Sistem_SimpanTrxKeluar"/>
+    <sequenceFlow id="Flow_Sistem_SimpanTrxKeluar_to_LaporanPenerimaan"
+                  sourceRef="Task_Sistem_SimpanTrxKeluar"
+                  targetRef="Task_Sistem_LaporanPenerimaan"/>
+    <sequenceFlow id="Flow_Sistem_LaporanPenerimaan_to_BendaharaKas"
+                  sourceRef="Task_Sistem_LaporanPenerimaan"
+                  targetRef="Task_Bendahara_TerimaKasDariPengepul"/>
+    <sequenceFlow id="Flow_BendaharaKas_to_End_Jual"
+                  sourceRef="Task_Bendahara_TerimaKasDariPengepul"
+                  targetRef="EndEvent_Jual"/>
+
+  </process>
+
+  <!-- ========================================================= -->
+  <!-- 4. PROSES PELAPORAN & MONITORING                          -->
+  <!-- ========================================================= -->
+  <process id="Process_Pelaporan" name="Proses Pelaporan & Monitoring" isExecutable="false">
+
+    <laneSet id="LaneSet_Pelaporan">
+      <lane id="Lane_Pengurus_Laporan" name="Pengurus">
+        <flowNodeRef>StartEvent_Laporan</flowNodeRef>
+        <flowNodeRef>Task_Pengurus_PilihPeriodeLaporan</flowNodeRef>
+        <flowNodeRef>Task_Pengurus_UnduhCetakLaporan</flowNodeRef>
+        <flowNodeRef>EndEvent_Laporan</flowNodeRef>
+      </lane>
+      <lane id="Lane_Sistem_Laporan" name="Sistem Informasi">
+        <flowNodeRef>Task_Sistem_AmbilDataTrx</flowNodeRef>
+        <flowNodeRef>Task_Sistem_HitungRekap</flowNodeRef>
+        <flowNodeRef>Task_Sistem_GenerateLaporan</flowNodeRef>
+      </lane>
+      <lane id="Lane_TimPengabdi_Laporan" name="Tim Pengabdi / LPPM">
+        <flowNodeRef>Task_TimPengabdi_TerimaLaporan</flowNodeRef>
+      </lane>
+    </laneSet>
+
+    <!-- Events -->
+    <startEvent id="StartEvent_Laporan" name="Pengurus Membuka Menu Laporan"/>
+    <endEvent id="EndEvent_Laporan" name="Pelaporan Selesai">
+      <incoming>Flow_PengurusCetak_to_End_Laporan</incoming>
+    </endEvent>
+
+    <!-- Tasks - Pengurus -->
+    <task id="Task_Pengurus_PilihPeriodeLaporan" name="Pilih periode laporan">
+      <incoming>Flow_Start_to_PilihPeriode</incoming>
+      <outgoing>Flow_PilihPeriode_to_Sistem_AmbilData</outgoing>
+    </task>
+
+    <task id="Task_Pengurus_UnduhCetakLaporan" name="Unduh / cetak laporan">
+      <incoming>Flow_Sistem_GenerateLaporan_to_PengurusCetak</incoming>
+      <outgoing>Flow_PengurusCetak_to_TimPengabdiTerima</outgoing>
+      <outgoing>Flow_PengurusCetak_to_End_Laporan</outgoing>
+    </task>
+
+    <!-- Tasks - Sistem Informasi -->
+    <task id="Task_Sistem_AmbilDataTrx" name="Ambil data transaksi dari database">
+      <incoming>Flow_PilihPeriode_to_Sistem_AmbilData</incoming>
+      <outgoing>Flow_Sistem_AmbilData_to_HitungRekap</outgoing>
+    </task>
+
+    <task id="Task_Sistem_HitungRekap" name="Hitung rekap volume, saldo, dan kas">
+      <incoming>Flow_Sistem_AmbilData_to_HitungRekap</incoming>
+      <outgoing>Flow_Sistem_HitungRekap_to_GenerateLaporan</outgoing>
+    </task>
+
+    <task id="Task_Sistem_GenerateLaporan" name="Generate laporan grafik & tabel">
+      <incoming>Flow_Sistem_HitungRekap_to_GenerateLaporan</incoming>
+      <outgoing>Flow_Sistem_GenerateLaporan_to_PengurusCetak</outgoing>
+    </task>
+
+    <!-- Tasks - Tim Pengabdi / LPPM -->
+    <task id="Task_TimPengabdi_TerimaLaporan" name="Terima laporan untuk monitoring">
+      <incoming>Flow_PengurusCetak_to_TimPengabdiTerima</incoming>
+    </task>
+
+    <!-- Sequence Flows -->
+    <sequenceFlow id="Flow_Start_to_PilihPeriode"
+                  sourceRef="StartEvent_Laporan"
+                  targetRef="Task_Pengurus_PilihPeriodeLaporan"/>
+    <sequenceFlow id="Flow_PilihPeriode_to_Sistem_AmbilData"
+                  sourceRef="Task_Pengurus_PilihPeriodeLaporan"
+                  targetRef="Task_Sistem_AmbilDataTrx"/>
+    <sequenceFlow id="Flow_Sistem_AmbilData_to_HitungRekap"
+                  sourceRef="Task_Sistem_AmbilDataTrx"
+                  targetRef="Task_Sistem_HitungRekap"/>
+    <sequenceFlow id="Flow_Sistem_HitungRekap_to_GenerateLaporan"
+                  sourceRef="Task_Sistem_HitungRekap"
+                  targetRef="Task_Sistem_GenerateLaporan"/>
+    <sequenceFlow id="Flow_Sistem_GenerateLaporan_to_PengurusCetak"
+                  sourceRef="Task_Sistem_GenerateLaporan"
+                  targetRef="Task_Pengurus_UnduhCetakLaporan"/>
+    <sequenceFlow id="Flow_PengurusCetak_to_TimPengabdiTerima"
+                  sourceRef="Task_Pengurus_UnduhCetakLaporan"
+                  targetRef="Task_TimPengabdi_TerimaLaporan"/>
+    <sequenceFlow id="Flow_PengurusCetak_to_End_Laporan"
+                  sourceRef="Task_Pengurus_UnduhCetakLaporan"
+                  targetRef="EndEvent_Laporan"/>
+
+  </process>
+
+</definitions>
