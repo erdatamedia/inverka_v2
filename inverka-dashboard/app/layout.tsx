@@ -11,7 +11,7 @@ import { ActiveThemeProvider } from "@/components/active-theme";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: "Inverka Dashboard",
+  title: "INVERKA | INVENTORY & MRV GHG BEEF CATTLE",
   description:
     "A fully responsive analytics dashboard featuring dynamic charts, interactive tables, a collapsible sidebar, and a light/dark mode theme switcher. Built with modern web technologies, it ensures seamless performance across devices, offering an intuitive user interface for data visualization and exploration.",
   icons: {

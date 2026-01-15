@@ -56,6 +56,7 @@ export default function SuperadminPengajuanPage() {
   const [rows, setRows] = React.useState<SubmissionRecord[]>([]);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
+  const [backupError, setBackupError] = React.useState<string | null>(null);
   const [year, setYear] = React.useState<number>(new Date().getFullYear());
   const [detailOpen, setDetailOpen] = React.useState(false);
   const [detailLoading, setDetailLoading] = React.useState(false);
@@ -63,6 +64,7 @@ export default function SuperadminPengajuanPage() {
   const [statusFilter, setStatusFilter] = React.useState<
     SubmissionStatus | "all"
   >("all");
+  const backupInputRef = React.useRef<HTMLInputElement | null>(null);
 
   const load = React.useCallback(async () => {
     setLoading(true);
@@ -114,6 +116,65 @@ export default function SuperadminPengajuanPage() {
     `${roundGg(value)} Gg / ${ggToTon(value).toLocaleString("id-ID", {
       maximumFractionDigits: 2,
     })} ton`;
+
+  const exportBackup = () => {
+    const payload = {
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      year,
+      rows,
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], {
+      type: "application/json",
+    });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `pengajuan-superadmin-${year}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleImport = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    setBackupError(null);
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const text = String(reader.result ?? "");
+        const payload = JSON.parse(text) as {
+          rows?: SubmissionRecord[];
+          year?: number;
+        };
+        if (!Array.isArray(payload.rows)) {
+          throw new Error("Format file backup tidak valid.");
+        }
+        const sorted = [...payload.rows].sort(
+          (a, b) =>
+            new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
+        );
+        setRows(sorted);
+        if (typeof payload.year === "number") {
+          setYear(payload.year);
+        }
+        setStatusFilter("all");
+      } catch (err) {
+        const message =
+          err instanceof Error
+            ? err.message
+            : "Gagal membaca file backup.";
+        setBackupError(message);
+      } finally {
+        event.target.value = "";
+      }
+    };
+    reader.onerror = () => {
+      setBackupError("Gagal membaca file backup.");
+      event.target.value = "";
+    };
+    reader.readAsText(file);
+  };
 
   const statusOptions = React.useMemo(
     () =>
@@ -198,13 +259,43 @@ export default function SuperadminPengajuanPage() {
               ) : null}
 
               <Card>
-                <CardHeader>
-                  <CardTitle>Daftar Pengajuan</CardTitle>
-                  <CardDescription>
-                    Tampilan read-only untuk monitoring superadmin.
-                  </CardDescription>
+                <CardHeader className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="space-y-1">
+                    <CardTitle>Daftar Pengajuan</CardTitle>
+                    <CardDescription>
+                      Tampilan read-only untuk monitoring superadmin.
+                    </CardDescription>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={exportBackup}
+                    >
+                      Export backup
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => backupInputRef.current?.click()}
+                    >
+                      Import backup
+                    </Button>
+                    <input
+                      ref={backupInputRef}
+                      type="file"
+                      accept="application/json"
+                      className="hidden"
+                      onChange={handleImport}
+                    />
+                  </div>
                 </CardHeader>
                 <CardContent className="overflow-x-auto">
+                  {backupError ? (
+                    <p className="mb-3 text-sm text-destructive">
+                      {backupError}
+                    </p>
+                  ) : null}
                   <div className="mb-3 flex flex-wrap gap-2">
                     <Button
                       variant={statusFilter === "all" ? "default" : "outline"}

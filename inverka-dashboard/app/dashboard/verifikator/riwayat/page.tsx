@@ -75,6 +75,7 @@ export default function VerifikatorRiwayatPage() {
   const [rows, setRows] = useState<SubmissionRecord[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [backupError, setBackupError] = useState<string | null>(null);
   const [year, setYear] = useState<number>(new Date().getFullYear());
   const [detailOpen, setDetailOpen] = useState(false);
   const [detailLoading, setDetailLoading] = useState(false);
@@ -84,6 +85,7 @@ export default function VerifikatorRiwayatPage() {
   const [statusFilter, setStatusFilter] = useState<SubmissionStatus | "all">(
     "all"
   );
+  const backupInputRef = React.useRef<HTMLInputElement | null>(null);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -214,6 +216,65 @@ export default function VerifikatorRiwayatPage() {
       maximumFractionDigits: 2,
     })} ton`;
 
+  const exportBackup = () => {
+    const payload = {
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      year,
+      rows,
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], {
+      type: "application/json",
+    });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `pengajuan-verifikator-${year}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleImport = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    setBackupError(null);
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const text = String(reader.result ?? "");
+        const payload = JSON.parse(text) as {
+          rows?: SubmissionRecord[];
+          year?: number;
+        };
+        if (!Array.isArray(payload.rows)) {
+          throw new Error("Format file backup tidak valid.");
+        }
+        const sorted = [...payload.rows].sort(
+          (a, b) =>
+            new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
+        );
+        setRows(sorted);
+        if (typeof payload.year === "number") {
+          setYear(payload.year);
+        }
+        setStatusFilter("all");
+      } catch (err) {
+        const message =
+          err instanceof Error
+            ? err.message
+            : "Gagal membaca file backup.";
+        setBackupError(message);
+      } finally {
+        event.target.value = "";
+      }
+    };
+    reader.onerror = () => {
+      setBackupError("Gagal membaca file backup.");
+      event.target.value = "";
+    };
+    reader.readAsText(file);
+  };
+
   const statusOptions = React.useMemo(
     () =>
       ([
@@ -297,13 +358,43 @@ export default function VerifikatorRiwayatPage() {
               ) : null}
 
               <Card>
-                <CardHeader>
-                  <CardTitle>Daftar Pengajuan</CardTitle>
-                  <CardDescription>
-                    Pengajuan terbaru berada di bagian atas.
-                  </CardDescription>
+                <CardHeader className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="space-y-1">
+                    <CardTitle>Daftar Pengajuan</CardTitle>
+                    <CardDescription>
+                      Pengajuan terbaru berada di bagian atas.
+                    </CardDescription>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={exportBackup}
+                    >
+                      Export backup
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => backupInputRef.current?.click()}
+                    >
+                      Import backup
+                    </Button>
+                    <input
+                      ref={backupInputRef}
+                      type="file"
+                      accept="application/json"
+                      className="hidden"
+                      onChange={handleImport}
+                    />
+                  </div>
                 </CardHeader>
                 <CardContent className="overflow-x-auto">
+                  {backupError ? (
+                    <p className="mb-3 text-sm text-destructive">
+                      {backupError}
+                    </p>
+                  ) : null}
                   <div className="mb-3 flex flex-wrap gap-2">
                     <Button
                       variant={statusFilter === "all" ? "default" : "outline"}
