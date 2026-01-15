@@ -30,6 +30,7 @@ import { useState, useEffect, useCallback } from "react";
 import { api } from "@/lib/api";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { parseSubmissionBackup } from "@/lib/backup";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -242,20 +243,14 @@ export default function VerifikatorRiwayatPage() {
     reader.onload = () => {
       try {
         const text = String(reader.result ?? "");
-        const payload = JSON.parse(text) as {
-          rows?: SubmissionRecord[];
-          year?: number;
-        };
-        if (!Array.isArray(payload.rows)) {
-          throw new Error("Format file backup tidak valid.");
-        }
-        const sorted = [...payload.rows].sort(
+        const parsed = parseSubmissionBackup(text);
+        const sorted = [...parsed.rows].sort(
           (a, b) =>
             new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
         );
         setRows(sorted);
-        if (typeof payload.year === "number") {
-          setYear(payload.year);
+        if (typeof parsed.year === "number") {
+          setYear(parsed.year);
         }
         setStatusFilter("all");
       } catch (err) {

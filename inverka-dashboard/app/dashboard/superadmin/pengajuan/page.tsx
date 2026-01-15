@@ -25,6 +25,7 @@ import type { SubmissionRecord, SubmissionStatus } from "@/lib/types";
 import { STATUS_LABEL, getVerifikasiDetail } from "@/lib/verifikasi-api";
 import { api } from "@/lib/api";
 import { roundGg, ggToTon } from "@/lib/format";
+import { parseSubmissionBackup } from "@/lib/backup";
 
 const STATUS_TONE: Record<SubmissionStatus, string> = {
   menunggu_verifikasi:
@@ -143,20 +144,14 @@ export default function SuperadminPengajuanPage() {
     reader.onload = () => {
       try {
         const text = String(reader.result ?? "");
-        const payload = JSON.parse(text) as {
-          rows?: SubmissionRecord[];
-          year?: number;
-        };
-        if (!Array.isArray(payload.rows)) {
-          throw new Error("Format file backup tidak valid.");
-        }
-        const sorted = [...payload.rows].sort(
+        const parsed = parseSubmissionBackup(text);
+        const sorted = [...parsed.rows].sort(
           (a, b) =>
             new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
         );
         setRows(sorted);
-        if (typeof payload.year === "number") {
-          setYear(payload.year);
+        if (typeof parsed.year === "number") {
+          setYear(parsed.year);
         }
         setStatusFilter("all");
       } catch (err) {
