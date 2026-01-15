@@ -684,12 +684,6 @@ export default function Home() {
       <footer className="border-t border-primary/10 bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-700 py-6 text-xs text-emerald-50">
         <div className="container mx-auto flex flex-col gap-2 px-6 sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} Inverka v2 — BRIN</span>
-          <span>
-            API base: {" "}
-            <code className="rounded bg-emerald-600 px-1 py-0.5 text-white">
-              {process.env.NEXT_PUBLIC_API_BASE || "http://localhost:8000"}
-            </code>
-          </span>
         </div>
       </footer>
     </div>

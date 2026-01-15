@@ -9,6 +9,7 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { isAxiosError } from "axios"; // Tambahkan import ini jika Anda menggunakan Axios!
+import { ArrowLeft } from "lucide-react";
 
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -109,18 +110,31 @@ export default function LoginPage() {
         className="pointer-events-none absolute inset-0 -z-10"
       ></div>
       <Card className="w-full max-w-md border-border">
-        <CardHeader className="space-y-2 items-center text-center">
-          <div className="mb-1">
-            <Image
-              src="/logo-inverka.png"
-              alt="INVERKA"
-              width={2000}
-              height={2000}
-              priority
-              className="rounded-md shadow-sm object-contain"
-            />
+        <CardHeader className="space-y-4">
+          <div className="flex w-full justify-start">
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              onClick={() => router.back()}
+            >
+              <ArrowLeft />
+              Kembali
+            </Button>
           </div>
-          <CardTitle className="text-2xl">Masuk ke INVERKA</CardTitle>
+          <div className="flex flex-col items-center space-y-2 text-center">
+            <div className="mb-1">
+              <Image
+                src="/logo-inverka.png"
+                alt="INVERKA"
+                width={2000}
+                height={2000}
+                priority
+                className="rounded-md shadow-sm object-contain"
+              />
+            </div>
+            <CardTitle className="text-2xl">Masuk ke INVERKA</CardTitle>
+          </div>
         </CardHeader>
 
         <CardContent>
